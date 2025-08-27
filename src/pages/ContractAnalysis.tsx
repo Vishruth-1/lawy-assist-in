@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
+import Navigation from '@/components/Navigation';
 import { 
   FileText, 
   Upload, 
@@ -193,11 +194,13 @@ const ContractAnalysis = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <div className="bg-gradient-primary shadow-legal">
+      <Navigation />
+      
+      {/* Page Header */}
+      <div className="bg-gradient-card border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <h1 className="text-3xl font-bold text-white">Contract Analysis</h1>
-          <p className="text-white/80 mt-2">AI-powered contract analysis for risks, compliance, and recommendations</p>
+          <h1 className="text-3xl font-bold text-foreground">Contract Analysis</h1>
+          <p className="text-muted-foreground mt-2">AI-powered contract analysis for risks, compliance, and recommendations</p>
         </div>
       </div>
 

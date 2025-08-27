@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/AuthContext';
+import Navigation from '@/components/Navigation';
 import { 
   Upload, 
   Search, 
@@ -63,36 +64,7 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="bg-gradient-primary shadow-legal">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
-            <div className="flex items-center">
-              <Scale className="h-8 w-8 text-white mr-3" />
-              <div>
-                <h1 className="text-2xl font-bold text-white">Legal Research System</h1>
-                <div className="flex items-center text-secondary text-sm">
-                  <IndianRupee className="h-4 w-4 mr-1" />
-                  <span>Indian Law Focused</span>
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <div className="text-right">
-                <p className="text-white font-medium">{user?.name}</p>
-                <p className="text-white/70 text-sm">{user?.email}</p>
-              </div>
-              <Button 
-                variant="outline" 
-                onClick={logout}
-                className="bg-white/10 border-white/20 text-white hover:bg-white/20"
-              >
-                Logout
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Navigation />
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

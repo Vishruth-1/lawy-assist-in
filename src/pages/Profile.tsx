@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 import { useAuth } from '@/contexts/AuthContext';
 import { useToast } from '@/hooks/use-toast';
+import Navigation from '@/components/Navigation';
 import { 
   User, 
   Mail, 
@@ -89,11 +90,13 @@ const Profile = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <div className="bg-gradient-primary shadow-legal">
+      <Navigation />
+      
+      {/* Page Header */}
+      <div className="bg-gradient-card border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <h1 className="text-3xl font-bold text-white">Profile Settings</h1>
-          <p className="text-white/80 mt-2">Manage your account information and preferences</p>
+          <h1 className="text-3xl font-bold text-foreground">Profile Settings</h1>
+          <p className="text-muted-foreground mt-2">Manage your account information and preferences</p>
         </div>
       </div>
 

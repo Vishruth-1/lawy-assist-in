@@ -7,6 +7,7 @@ import { Switch } from '@/components/ui/switch';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
+import Navigation from '@/components/Navigation';
 import { 
   Settings as SettingsIcon, 
   Brain, 
@@ -120,27 +121,29 @@ const Settings = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <div className="bg-gradient-primary shadow-legal">
+      <Navigation />
+      
+      {/* Page Header */}
+      <div className="bg-gradient-card border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-4 sm:space-y-0">
             <div>
-              <h1 className="text-3xl font-bold text-white">Settings</h1>
-              <p className="text-white/80 mt-2">Customize your Legal Research System experience</p>
+              <h1 className="text-3xl font-bold text-foreground">Settings</h1>
+              <p className="text-muted-foreground mt-2">Customize your Legal Research System experience</p>
             </div>
             <div className="flex space-x-3">
               <Button
                 variant="outline"
                 onClick={handleResetToDefaults}
-                className="bg-white/10 border-white/20 text-white hover:bg-white/20"
+                className="flex items-center space-x-2"
               >
-                <RotateCcw className="h-4 w-4 mr-2" />
-                Reset to Defaults
+                <RotateCcw className="h-4 w-4" />
+                <span>Reset to Defaults</span>
               </Button>
               <Button
                 onClick={handleSaveSettings}
                 disabled={!hasChanges}
-                className="btn-legal-secondary"
+                className="btn-legal-primary"
               >
                 <Save className="h-4 w-4 mr-2" />
                 Save Settings
